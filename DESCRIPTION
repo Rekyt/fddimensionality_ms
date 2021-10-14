@@ -1,0 +1,37 @@
+Package: fddimensionality
+Title: Test Effect of Traits of FD-Environment Relationship
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Matthias", "Grenié", 
+            email = "matthias.grenie@ens-lyon.fr", 
+            role = c("aut", "cre", "cph"),
+            comment=c(ORCID = "http://orcid.org/0000-0002-4659-7522")),
+    person("François", "Munoz",
+           email = "fmunoz@univ-grenoble-alpes.fr",
+           role = "aut",
+           comment = c(ORCID = "0000-0001-8776-4705")),
+    person("Cyrille", "Violle",
+           email = "cyrille.violle@cefe.cnrs.fr",
+           role = "aut",
+           comment = c(ORCID = "0000-0002-2471-9226"))
+  )
+Description: Companion code for paper XXX <doi:xxx> on FD-Environment
+    relationship, which tests to what extent we can expect FD-Environment trait
+    relationship in function of number of traits included and type of
+    environmental filtering.
+License: MIT + file LICENSE
+ByteCompile: true
+Encoding: UTF-8
+LazyData: true
+Imports:
+    ape,
+    bookdown,
+    cowplot,
+    dplyr,
+    drake (>= 7.3.0),
+    funrar,
+    ggplot2,
+    purrr,
+    Weighted.Desc.Stat
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2

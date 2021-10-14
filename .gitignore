@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.drake/
+.drake_history/
+vert.txt
+*.log
+*.DS_Store
