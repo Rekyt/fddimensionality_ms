@@ -5,6 +5,7 @@ output: github_document
 
 <!-- badges:start -->
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5570256.svg)](https://doi.org/10.5281/zenodo.5570256)
 <!-- badges:end -->
 
 ```{r, echo = FALSE}
@@ -28,7 +29,7 @@ This is the companion repository for the following paper:
 
 Please cite this compendium as:
 
-> Grenié M., Munoz F., Violle C., (`r format(Sys.Date(), "%Y")`). _Compendium of R code and data for `r Title`_. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
+> Grenié M., Munoz F., Violle C., (`r format(Sys.Date(), "%Y")`). _Compendium of R code and data for `r Title`_. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/10.5281/zenodo.5570256>
 
 
 ### How to download or install

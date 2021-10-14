@@ -2,6 +2,7 @@
 <!-- badges:start -->
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5570256.svg)](https://doi.org/10.5281/zenodo.5570256)
 <!-- badges:end -->
 
 # fd-dimensionality: Effect of the number of traits on fd-env relationships
@@ -19,7 +20,7 @@ Please cite this compendium as:
 > Grenié M., Munoz F., Violle C., (2021). *Compendium of R code and data
 > for When more is less: adding more traits dilutes the functional
 > diversity-environment relationship*. Accessed 14 oct 2021. Online at
-> <https://doi.org/xxx/xxx>
+> <https://doi.org/10.5281/zenodo.5570256>
 
 ### How to download or install
 
