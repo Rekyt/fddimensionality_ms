@@ -17,9 +17,9 @@ This is the companion repository for the following paper:
 
 Please cite this compendium as:
 
-> Grenié M., Munoz F., Violle C., (2021). *Compendium of R code and data
+> Grenié M., Munoz F., Violle C., (2022). *Compendium of R code and data
 > for When more is less: adding more traits dilutes the functional
-> diversity-environment relationship*. Accessed 14 oct 2021. Online at
+> diversity-environment relationship*. Accessed 26 mai 2022. Online at
 > <https://doi.org/10.5281/zenodo.5570256>
 
 ### How to download or install
