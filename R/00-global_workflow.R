@@ -494,7 +494,7 @@ global_workflow = function() {
             filter(fd_index %in% c("FDis", "FRic"),
                    fd_type != "empirical_p_fd") %>%
             plot_env_fd_obs_ses_single(),
-        fig_two_var_fd = two_var_fd %>%
+        fig_two_var_fd = two_var_df %>%
             filter(fd_index == "Q") %>%
             mutate(contains_trait = contains_trait %>%
                        as.factor() %>%
@@ -691,11 +691,7 @@ global_workflow = function() {
                     coord_flip() +
                     theme(aspect.ratio = 1,
                           legend.position = "top")) %>%
-            cowplot::plot_grid(plotlist = ., ncol = 2),
-        # Render Manuscript ----------------------------------------------------
-        manuscript = rmarkdown::render(
-            knitr_in("analysis/paper/fd_dimensionality.Rmd"), "all"
-        )
+            cowplot::plot_grid(plotlist = ., ncol = 2)
     )
 }
 
