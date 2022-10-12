@@ -464,7 +464,7 @@ global_workflow = function() {
                 avg, filter_sd,
                 ~tibble(env_value = seq(0, 1, length.out = 1000),
                         filt_value = dnorm(env_value, mean = .x, sd = .y),
-                        sc_abund = divr::scale_zero_one(filt_value)))) %>%
+                        sc_abund = scale_zero_one(filt_value)))) %>%
             tidyr::unnest(all_values) %>%
             ggplot(aes(env_value, sc_abund, color = as.factor(avg), group = avg)) +
             geom_line(size = 2) +

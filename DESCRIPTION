@@ -29,9 +29,17 @@ Imports:
     cowplot,
     dplyr,
     drake (>= 7.3.0),
+    ecolottery,
     funrar,
     ggplot2,
     purrr,
+    rmarkdown,
     Weighted.Desc.Stat
+Suggests:
+    forcats,
+    narray,
+    purrr,
+    tidyr,
+    vegan
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2
+RoxygenNote: 7.2.1
