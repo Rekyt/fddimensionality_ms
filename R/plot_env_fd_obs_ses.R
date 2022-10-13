@@ -5,7 +5,7 @@
 #'                   functional diversity
 #'
 #' @export
-plot_env_fd_obs_ses_two = function(full_fd_df, plot_labs = "AUTO") {
+plot_env_fd_obs_ses_two = function(full_fd_df) {
     full_fd_split = full_fd_df %>%
         filter(fd_index %in% c("FRic", "FDis", "RaoQ")) %>%
         mutate(fd_type = factor(fd_type, c("obs_value", "fd_ses",
@@ -67,7 +67,7 @@ plot_env_fd_obs_ses_two = function(full_fd_df, plot_labs = "AUTO") {
                   legend.position = "top")
     })
 }
-plot_env_fd_obs_ses_single = function(full_fd_df, plot_labs = "AUTO") {
+plot_env_fd_obs_ses_single = function(full_fd_df) {
 
     max_number_trait = max(full_fd_df$trait_num)
 

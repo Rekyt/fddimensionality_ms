@@ -96,9 +96,6 @@ compute_local_global_di = function(sim_df, dist_matrix, di_name = NULL,
 #' @param trait_comb_df     \[`data.frame()`\]\cr{}
 #'                          a data.frame with the list of trait combinations
 #'                          considered as well as the number of traits included
-#' @param var_type          \[`character(1)`\]\cr{}
-#'                          a string giving the column on which `site_sp_df`
-#'                          should be spread
 #'
 #' @export
 compute_dissim_di = function(trait_dissim_list, site_sp_df, trait_comb_df) {

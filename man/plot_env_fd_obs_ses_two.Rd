@@ -4,7 +4,7 @@
 \alias{plot_env_fd_obs_ses_two}
 \title{Figure of FD vs. Environment Comparing Observed and SES values}
 \usage{
-plot_env_fd_obs_ses_two(full_fd_df, plot_labs = "AUTO")
+plot_env_fd_obs_ses_two(full_fd_df)
 }
 \arguments{
 \item{full_fd_df}{[\code{data.frame()}]\cr{}

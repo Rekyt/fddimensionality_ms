@@ -1,9 +1,17 @@
 #' Compute FD indices without abundances
 #'
 #' Wrapper around [`FD::dbFD()`]
+#'
 #' @inheritParams compute_dissim_di
+#'
+#' @param trait_df        \[`data.frame()`\]\cr{}
+#'                        a trait data.frame with species as rows and traits as
+#'                        columns
 #' @param trait_comb \[`list(character(1+))`\]\cr{}
 #'                   a list contaning combinations of trait combinations
+#' @param var_type   \[`character(1)`\]\cr{}
+#'                   a string giving the column on which `site_sp_df`
+#'                   should be spread
 #'
 #' @export
 compute_other_fd = function(site_sp_df, trait_comb, trait_df,

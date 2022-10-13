@@ -14,6 +14,10 @@ species in a site with its abundance}
 \item{trait_comb}{[\verb{list(character(1+))}]\cr{}
 a list contaning combinations of trait combinations}
 
+\item{trait_df}{[\code{data.frame()}]\cr{}
+a trait data.frame with species as rows and traits as
+columns}
+
 \item{var_type}{[\code{character(1)}]\cr{}
 a string giving the column on which \code{site_sp_df}
 should be spread}

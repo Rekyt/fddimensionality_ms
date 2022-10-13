@@ -18,10 +18,6 @@ species in a site with its abundance}
 \item{trait_comb_df}{[\code{data.frame()}]\cr{}
 a data.frame with the list of trait combinations
 considered as well as the number of traits included}
-
-\item{var_type}{[\code{character(1)}]\cr{}
-a string giving the column on which \code{site_sp_df}
-should be spread}
 }
 \description{
 Compute Functional Diversity Using All Dissimilarities
