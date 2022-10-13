@@ -2,8 +2,8 @@
 output: github_document
 ---
 
-
 <!-- badges:start -->
+[![R-CMD-check](https://github.com/Rekyt/fddimensionality_ms/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Rekyt/fddimensionality_ms/actions/workflows/R-CMD-check.yaml)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5570256.svg)](https://doi.org/10.5281/zenodo.5570256)
 <!-- badges:end -->
