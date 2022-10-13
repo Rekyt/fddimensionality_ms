@@ -1,4 +1,3 @@
-#' @export
 compute_global_di = function(global_dist) {
     global_com = matrix(1, ncol = nrow(global_dist),
                         dimnames = list(site = "glob",
@@ -10,7 +9,7 @@ compute_global_di = function(global_dist) {
     return(global_di_df)
 }
 
-#' @export
+
 compute_all_di = function(sim_df, global_dist = global_dist,
                           single_trait_dist   = single_trait_dist,
                           other_trait_dist    = other_trait_dist,
@@ -43,7 +42,7 @@ compute_all_di = function(sim_df, global_dist = global_dist,
                    by = join_cols)
 }
 
-#' @export
+
 compute_specific_di = function(sim_df, dist_matrix, di_type = "global_di",
                                rel_abund_col = NULL) {
 
@@ -61,7 +60,7 @@ compute_specific_di = function(sim_df, dist_matrix, di_type = "global_di",
         tidyr::unnest(data)
 }
 
-#' @export
+
 compute_local_global_di = function(sim_df, dist_matrix, di_name = NULL,
                                    rel_abund_col = NULL) {
 

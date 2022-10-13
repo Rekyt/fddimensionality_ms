@@ -25,15 +25,20 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     ape,
+    broom,
     bookdown,
     cowplot,
     dplyr,
     drake (>= 7.3.0),
     ecolottery,
     funrar,
+    FD,
+    geometry,
     ggplot2,
     purrr,
     rmarkdown,
+    rlang,
+    tibble,
     Weighted.Desc.Stat
 Suggests:
     forcats,
