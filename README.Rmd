@@ -22,7 +22,7 @@ Title <- "When more is less: adding more traits dilutes the functional diversity
 
 This is the companion repository for the following paper:
 
-> Grenié M., Munoz F., Violle C. (2021). _When more is less: adding more traits dilutes the functional diversity-environment relationship_. *Submitted*
+> Grenié M., Munoz F., Violle C. (2022). _When more is less: adding more traits dilutes the functional diversity-environment relationship_. *Submitted*
 
 
 ### How to cite
