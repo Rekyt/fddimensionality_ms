@@ -49,7 +49,7 @@ The analyses of the compendium heavily rely on the use the of workflow managemen
 To run them run the following lines:
 
 ```{r running-workflow, eval = FALSE}
-# Beware this may take a long time (>10 hours)
+# Beware this may take a long time (>10 hours on a single computer)
 pkgload::load_all()
 drake::make(global_workflow())
 ```
