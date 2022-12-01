@@ -494,26 +494,6 @@ global_workflow = function() {
             filter(fd_index %in% c("FDis", "FRic"),
                    fd_type != "empirical_p_fd") %>%
             plot_env_fd_obs_ses_single(),
-        # fig_two_var_fd = two_var_df %>%
-        #     filter(fd_index == "Q") %>%
-        #     mutate(contains_trait = contains_trait %>%
-        #                as.factor() %>%
-        #                forcats::fct_relevel("trait1 & trait2",
-        #                                     after = 3L)) %>%
-        #     ggplot(aes(as.numeric(sigma), fd_value, color = contains_trait,
-        #                group = trait_comb)) +
-        #     geom_point(alpha = 1/2) +
-        #     geom_abline(data = two_var_fd_select_reg, size = 0.8,
-        #                 aes(slope = sigma, intercept = `(Intercept)`,
-        #                     color = contains_trait)) +
-        #     facet_grid(cols = vars(trait_num),
-        #                labeller = labeller(trait_num = trait_num_lab)) +
-        #     labs(x = "Filtering Strength on Trait 1",
-        #          y = "Quadratic Entropy",
-        #          color = "Trait Included") +
-        #     theme_bw() +
-        #     theme(aspect.ratio = 1,
-        #           legend.position = "top"),
         fig_two_var_fd_indices = two_var_null_trait_fd_ses %>%
             inner_join(trait_comb_df) %>%
             mutate(contains_trait = cw_trait1_trait2(trait_comb)) %>%
