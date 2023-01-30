@@ -94,6 +94,12 @@ list(
         get_trait_comb_length(trait_dissim_all)
     ),
 
+    # Null Traits
+    tar_target(
+        null_traits,
+        generate_null_traits(traits, null_n)
+    ),
+
 
     # Single Trait simulations -------------------------------------------------
     tar_target(
@@ -103,6 +109,10 @@ list(
     tar_target(
         var_sigma_df,
         format_single_simulation(var_sigma_simul, pool = "big_pool")
+    ),
+    tar_target(
+        fd_var_sigma_obs,
+        compute_fd(var_sigma_df, traits, trait_comb_df)
     )
 )
 

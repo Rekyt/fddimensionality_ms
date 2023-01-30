@@ -130,7 +130,7 @@ global_workflow = function() {
             mutate(seed_env = paste0(seed, "__", env)) %>%
             select(-seed, -env) %>%
             tidyr::spread(species, abund) %>%
-            mutate_all(~ifelse(is.na(.), 0, .)) %>%
+            mutate(across(where(is.numeric), ~ifelse(is.na(.x), 0, .x))) %>%
             as.data.frame() %>%
             tibble::column_to_rownames("seed_env") %>%
             vegan::nullmodel("curveball") %>%

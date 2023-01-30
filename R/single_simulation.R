@@ -49,3 +49,56 @@ format_single_simulation = function(
         ungroup()
 
 }
+
+
+generate_null_traits = function(traits, n_null) {
+
+    null_traits = traits
+
+    lapply(seq(n_null), function(x) {
+        rownames(null_traits) = sample(
+            rownames(null_traits), nrow(null_traits), replace = FALSE
+        )
+
+        null_traits
+    }) %>%
+        setNames(paste0("null_trait_", seq(n_null)))
+
+}
+
+
+compute_fd = function(site_sp_df, traits, trait_comb_df) {
+
+    site_sp_df = site_sp_df %>%
+        select(seed, env, species, abund) %>%
+        mutate(new_var = paste0(seed, "__", env)) %>%
+        select(-seed, -env) %>%
+        tidyr::spread(species, abund) %>%
+        mutate(across(where(is.numeric), ~ifelse(is.na(.x), 0, .x))) %>%
+        as.data.frame() %>%
+        tibble::column_to_rownames("new_var") %>%
+        as.matrix()
+
+    lapply(seq(nrow(trait_comb_df)), function(n_comb) {
+
+        given_comb = trait_comb_df$trait_comb[[n_comb]] %>%
+            strsplit("_", fixed = TRUE) %>%
+            .[[1]]
+
+        fric = fundiversity::fd_fric(
+            traits[, given_comb, drop = FALSE], site_sp_df
+        )
+
+        fdis = fundiversity::fd_fdis(
+            traits[, given_comb, drop = FALSE], site_sp_df
+        )
+
+        merge(fric, fdis, by = "site")
+
+    }) %>%
+        setNames(nm = trait_comb_df$trait_comb) %>%
+        bind_rows(.id = "trait_comb") %>%
+        tibble::rownames_to_column("new_var") %>%
+        tidyr::separate(site, c("seed", "env"), sep = "__", convert = TRUE)
+
+}
