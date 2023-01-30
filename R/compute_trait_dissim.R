@@ -29,3 +29,35 @@ compute_trait_dissim = function(trait_comb_list, trait_df) {
             paste(x, sep = "", collapse = "_")
         }))
 }
+
+
+compute_all_trait_combinations_dissimilarity = function(traits) {
+
+    n_traits = ncol(traits)
+
+    all_trait_combinations = sapply(
+        seq(n_traits),
+        function(x) {
+            combn(colnames(traits), x, simplify = FALSE)
+        }) %>%
+        unlist(recursive = FALSE)
+
+    all_trait_combinations = setNames(
+        all_trait_combinations,
+        lapply(all_trait_combinations, function(x) {
+            paste(x, sep = "", collapse = "_")
+        })
+    )
+
+    lapply(
+        all_trait_combinations, function(given_comb) {
+
+            dist(
+                traits[, given_comb],
+                method = "euclidean"
+            ) %>%
+                as.matrix()
+        }
+    )
+
+}

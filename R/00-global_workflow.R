@@ -675,39 +675,7 @@ global_workflow = function() {
     )
 }
 
-filt_gaussian = function(x, topt, sigma) {
-    exp(-(x[1] - topt)^2/(2*sigma^2))
-}
 
-format_simulation_big_df = function(..., type = "com",
-                                    sim_type = c("coalesc", "forw"),
-                                    lim_sim_coef = FALSE) {
-
-    sim_type = match.arg(sim_type)
-    list_coalesc = list(...)
-
-    purrr::map_dfr(list_coalesc, function(x) {
-        single_com_df = x$com %>%
-            rename(species = sp) %>%
-            mutate(seed    = x$call$filt[[3]][[2]][[3]],
-                   env     = x$call$filt[[3]][[3]][[3]],
-                   sigma   = x$call$filt[[3]][[3]]$sigma,
-                   pool    = as.character(x$call$pool),
-                   m       = x$call$m,
-                   lim_sim = 0)
-
-        if (lim_sim_coef) {
-            single_com_df = single_com_df %>%
-                mutate(lim_sim = x$call$coeff.lim.sim)
-        }
-
-        return(single_com_df)
-    }) %>%
-        group_by(seed, pool, m, sigma, lim_sim, env, species) %>%
-        summarise(abund = n()) %>%
-        mutate(rel_abund = abund/sum(abund)) %>%
-        ungroup()
-}
 
 format_simulation_big_df_two_traits = function(..., type = "com",
                                                sim_type = c("coalesc", "forw"),
