@@ -6,3 +6,4 @@
 vert.txt
 *.log
 *.DS_Store
+_targets/
