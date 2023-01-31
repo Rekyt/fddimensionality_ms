@@ -93,6 +93,12 @@ list(
         trait_comb_df,
         get_trait_comb_length(trait_dissim_all)
     ),
+    tar_target(
+        trait_comb_df_grouped,
+        group_by(trait_comb_df, trait_num) %>%
+            tar_group(),
+        iteration = "group"
+    ),
 
     # Null Traits
     tar_target(
@@ -112,7 +118,9 @@ list(
     ),
     tar_target(
         fd_var_sigma_obs,
-        compute_fd(var_sigma_df, traits, trait_comb_df)
+        compute_fd(var_sigma_df, traits, trait_comb_df_grouped),
+        pattern = map(trait_comb_df_grouped),
+        iteration = "list"
     )
 )
 
