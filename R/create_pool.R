@@ -18,3 +18,28 @@ get_trait_comb_length = function(trait_dissim_all) {
     )
 
 }
+
+
+slice_smaller = function(trait_comb_df) {
+
+    set.seed(20230201)
+
+    split_groups = trait_comb_df %>%
+        group_by(trait_num) %>%
+        group_split()
+
+    lapply(split_groups, function(x) {
+
+        if (nrow(x) <= 100) {
+
+            x
+
+        } else {
+
+            slice_sample(x, n = 100, replace = FALSE)
+        }
+
+    }) %>%
+        bind_rows() %>%
+        group_by(trait_num)
+}
