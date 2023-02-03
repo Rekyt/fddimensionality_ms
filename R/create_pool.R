@@ -20,7 +20,7 @@ get_trait_comb_length = function(trait_dissim_all) {
 }
 
 
-slice_smaller = function(trait_comb_df) {
+slice_smaller = function(trait_comb_df, cutoff = 100) {
 
     set.seed(20230201)
 
@@ -30,13 +30,13 @@ slice_smaller = function(trait_comb_df) {
 
     lapply(split_groups, function(x) {
 
-        if (nrow(x) <= 100) {
+        if (nrow(x) <= cutoff) {
 
             x
 
         } else {
 
-            slice_sample(x, n = 100, replace = FALSE)
+            slice_sample(x, n = cutoff, replace = FALSE)
         }
 
     }) %>%

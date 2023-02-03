@@ -18,7 +18,7 @@ list(
     # Simulation Parameters ----------------------------------------------------
     # Constants
     tar_target(n_seed, 10L),
-    tar_target(n_traits, 11L),
+    tar_target(n_traits, 10L),
     tar_target(n_species, 200L),
     tar_target(n_com, 10L),
     tar_target(n_indiv, 500L),
@@ -95,7 +95,7 @@ list(
     ),
     tar_target(
         trait_comb_df_sliced_grouped,
-        tar_group(slice_smaller(trait_comb_df)),
+        tar_group(slice_smaller(trait_comb_df, 70)),
         iteration = "group"
     ),
 
