@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.0",
+    "Version": "4.2.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -535,6 +535,19 @@
       "Hash": "7c89603d81793f0d5486d91ab1fc6f1d",
       "Requirements": []
     },
+    "fundiversity": {
+      "Package": "fundiversity",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "8680c99988f1784858b0bfd6b00527c9",
+      "Requirements": [
+        "Matrix",
+        "future.apply",
+        "geometry",
+        "vegan"
+      ]
+    },
     "funrar": {
       "Package": "funrar",
       "Version": "1.5.0",
@@ -544,6 +557,30 @@
       "Requirements": [
         "Matrix",
         "cluster"
+      ]
+    },
+    "future": {
+      "Package": "future",
+      "Version": "1.28.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f3e26a942d4ee32cec9403e1ddd7000b",
+      "Requirements": [
+        "digest",
+        "globals",
+        "listenv",
+        "parallelly"
+      ]
+    },
+    "future.apply": {
+      "Package": "future.apply",
+      "Version": "1.10.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a930c9ddc317f898e6f5bed7be8dd322",
+      "Requirements": [
+        "future",
+        "globals"
       ]
     },
     "geiger": {
@@ -605,6 +642,16 @@
         "scales",
         "tibble",
         "withr"
+      ]
+    },
+    "globals": {
+      "Package": "globals",
+      "Version": "0.16.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e14798793892c6bebdbe2f144aacf6e6",
+      "Requirements": [
+        "codetools"
       ]
     },
     "glue": {
@@ -784,6 +831,14 @@
         "lpSolve"
       ]
     },
+    "listenv": {
+      "Package": "listenv",
+      "Version": "0.8.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "0bde42ee282efb18c7c4e63822f5b4f7",
+      "Requirements": []
+    },
     "locfit": {
       "Package": "locfit",
       "Version": "1.5-9.6",
@@ -936,6 +991,14 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "5a15e068f0bd9bac4252f8f9e11dc79f",
+      "Requirements": []
+    },
+    "parallelly": {
+      "Package": "parallelly",
+      "Version": "1.32.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "9e3d8d65cb9c5ca5966340a6bfec60b2",
       "Requirements": []
     },
     "pbapply": {
@@ -1138,12 +1201,6 @@
       "Version": "0.16.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "RemoteType": "standard",
-      "RemotePkgRef": "renv",
-      "RemoteRef": "renv",
-      "RemoteRepos": "https://cran.rstudio.com/",
-      "RemotePkgPlatform": "i386+x86_64-w64-mingw32",
-      "RemoteSha": "0.16.0",
       "Hash": "c9e8442ab69bc21c9697ecf856c1e6c7",
       "Requirements": []
     },
