@@ -1,11 +1,12 @@
 # Load packages required to define the pipeline:
 library(targets)
-# library(tarchetypes) # Load other packages as needed. # nolint
+
+options(fundiversity.memoise = FALSE)
 
 # Set target options:
 tar_option_set(
-  packages = c("tibble", "dplyr"), # packages that your targets need to run
-  format = "rds" # default storage format
+  packages = c("tibble", "dplyr"),
+  format = "rds"
 )
 
 # tar_make_clustermq() configuration
@@ -14,6 +15,8 @@ options(clustermq.scheduler = "multiprocess")
 # Load all functions in the R/ folder
 tar_source()
 
+
+# Actual target plan
 list(
     # Simulation Parameters ----------------------------------------------------
     # Constants
@@ -102,7 +105,8 @@ list(
     # Null Traits
     tar_target(
         null_traits,
-        generate_null_traits(traits, null_n)
+        generate_null_traits(traits, null_n),
+        iteration = "list"
     ),
 
 
@@ -119,6 +123,12 @@ list(
         fd_var_sigma_obs,
         compute_fd(var_sigma_df, traits, trait_comb_df_sliced_grouped),
         pattern = map(trait_comb_df_sliced_grouped),
+        iteration = "list"
+    ),
+    tar_target(
+        fd_var_sigma_null,
+        compute_fd(var_sigma_df, null_traits, trait_comb_df_sliced_grouped),
+        pattern = cross(null_traits, trait_comb_df_sliced_grouped),
         iteration = "list"
     )
 )
